@@ -1,0 +1,7 @@
+{
+  "name": "apptwo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
