@@ -1,0 +1,51 @@
+/* Custom styles for the grid */
+.custom-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%; /* Make the grid cover the page width */
+  }
+  
+  /* Custom styles for square IonCol */
+  .square-card {
+    flex: 1; /* Make the columns flexible to cover the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  /* Custom styles for IonCard */
+  .student-card, .profile-card {
+    background: #D9D9D9; /* Background color */
+    color: #000000; /* Text color */
+    width: 100%; /* Make the cards cover the column width */
+    border-radius: 0; /* Remove border radius */
+    border: none; /* Remove borders */
+  }
+  
+  /* Custom styles for IonIcon */
+  .icon {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  /* Custom styles for card title */
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Custom styles for the number in the Student Card */
+  .number {
+    font-size: 1.2rem;
+  }
+  
+ /* Custom background color */
+.custom-background {
+    --background:#407088;
+}
+ion-content {
+    --background:#407088;
+  }
