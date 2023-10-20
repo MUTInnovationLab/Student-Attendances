@@ -1,10 +1,13 @@
 /* Custom styles for the grid */
+/* Custom styles for the grid */
 .custom-grid {
     display: flex;
     justify-content: space-between;
+    margin: auto; /* Center horizontally */
     padding: 0 10px;
     width: 100%; /* Make the grid cover the page width */
   }
+  
   
   /* Custom styles for square IonCol */
   .square-card {
@@ -20,8 +23,7 @@
     background: #D9D9D9; /* Background color */
     color: #000000; /* Text color */
     width: 100%; /* Make the cards cover the column width */
-    border-radius: 0; /* Remove border radius */
-    border: none; /* Remove borders */
+    border-radius: 10px;
   }
   
   /* Custom styles for IonIcon */
@@ -49,3 +51,86 @@
 ion-content {
     --background:#407088;
   }
+
+
+
+
+
+
+
+
+
+   //CARDS
+   ion-card {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    ion-card-header {
+      background-color: #5DB7F2;
+      color: rgb(0, 0, 0);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    
+  }
+
+  a {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+
+
+  //TABLE STYLE
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #454545; /* Header background color */
+    color: white; /* Header text color */
+    height: 40px; /* Increase the height of the table header */
+    font-size: 18px; /* Increase the font size of the table header */
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #303030; /* Odd row background color */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #303030; /* Even row background color */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 30px; /* Adjust the width of the "Check" column */
+}
+
+td {
+    color: rgb(255, 255, 255); /* Set the font color of all <td> elements to black */
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
