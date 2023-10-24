@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'qr-scan',
     loadChildren: () => import('./qr-scan/qr-scan.module').then( m => m.QrScanPageModule)
   },
+  {
+    path: 'qrgenerator',
+    loadChildren: () => import('./qrgenerator/qrgenerator.module').then( m => m.QrgeneratorPageModule)
+  },
 
 ];
 
