@@ -1,19 +1,7 @@
-// import { Component, OnInit } from '@angular/core';
-// import { NavController } from '@ionic/angular/common';
 
-
-//   email!: string;
-//   name!: string;
-//   surname!: string;
-//   studentNumber!: number;
-//   password!: string;
-
-
-// }
-// Import necessary modules
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+// import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFirestore } from '@angular/fire/firestore';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -29,8 +17,8 @@ export class RegisterPage implements OnInit {
   studentNumber: string="";
   password: string="";
 
-  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore,private navCtrl: NavController) {}
-
+  // constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore,private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController){}
 
   ngOnInit() {
   }
@@ -40,40 +28,40 @@ export class RegisterPage implements OnInit {
   }
 
   // Function to handle user registration
-  signUp() {
-    // Create user with email and password
-    this.afAuth.createUserWithEmailAndPassword(this.email, this.password)
-      .then((userCredential: { user: any; }) => {
-        // User registration successful
-        const user = userCredential.user;
+  // signUp() {
+  //   // Create user with email and password
+  //   this.afAuth.createUserWithEmailAndPassword(this.email, this.password)
+  //     .then((userCredential: { user: any; }) => {
+  //       // User registration successful
+  //       const user = userCredential.user;
 
-        // Save additional user data to Firestore
-        this.saveUserDataToFirestore(user.uid);
+  //       // Save additional user data to Firestore
+  //       this.saveUserDataToFirestore(user.uid);
         
-        console.log('User registration successful:', user);
-      })
-      .catch((error: { message: any; }) => {
-        console.error('Error creating user:', error.message);
-      });
-  }
+  //       console.log('User registration successful:', user);
+  //     })
+  //     .catch((error: { message: any; }) => {
+  //       console.error('Error creating user:', error.message);
+  //     });
+  // }
 
-  // Function to save user data to Firestore
-  saveUserDataToFirestore(userId: string) {
-    const formData = {
-      email: this.email,
-      name: this.name,
-      surname: this.surname,
-      studentNumber: this.studentNumber,
-    };
+  // // Function to save user data to Firestore
+  // saveUserDataToFirestore(userId: string) {
+  //   const formData = {
+  //     email: this.email,
+  //     name: this.name,
+  //     surname: this.surname,
+  //     studentNumber: this.studentNumber,
+  //   };
 
-    // Add user data to Firestore
-    this.firestore.collection('users').doc(userId).set(formData)
-      .then(() => {
-        console.log('User data added to Firestore');
-      })
-      .catch((error: any) => {
-        console.error('Error adding user data to Firestore:', error);
-      });
-  }
+  //   // Add user data to Firestore
+  //   this.firestore.collection('users').doc(userId).set(formData)
+  //     .then(() => {
+  //       console.log('User data added to Firestore');
+  //     })
+  //     .catch((error: any) => {
+  //       console.error('Error adding user data to Firestore:', error);
+  //     });
+  // }
 }
 
