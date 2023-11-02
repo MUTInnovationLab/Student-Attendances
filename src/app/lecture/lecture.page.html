@@ -43,8 +43,29 @@
       </ion-row>
     </ion-grid> -->
 
+    
+
   </div>
  
+ 
+
+
+  <section id="contact" *ngIf="showAddCard">
+    <div class="sectionheader">	<h1>Adding Modules</h1></div>
+    <article>
+    <p>This is where you add your module as a lecture remember you can not  add a module that does not exist and if you are not a Lecturer you have no access and prohited on this system</p>
+      
+        <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
+    
+        <form action="" method="post" class="contactform">
+          <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">MODULE</label></p>
+          <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">CODE</label></p>
+          <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">LEVEL</label></p>
+          <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
+          <p class="submit_wrapper"><input type="submit" value="SUBMIT"></p>			
+        </form>
+    </article>
+  </section>
 
   <ion-card class="tablecard" >
     <table>
@@ -102,10 +123,12 @@
     </table>
    
    
-    
-<ion-button fill="clear">Logout</ion-button>
-<ion-button fill="outline">Delete</ion-button>
-<ion-button fill="solid">Add</ion-button>
+    <div class="ion-text-center">
+      <ion-button fill="clear">Logout</ion-button>
+      <ion-button fill="outline">Delete</ion-button>
+      <ion-button fill="solid" (click)="showAddCard = true">Add</ion-button>
+    </div>
+
   </ion-card>
   
   

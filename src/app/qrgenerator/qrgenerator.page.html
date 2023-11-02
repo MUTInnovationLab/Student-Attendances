@@ -10,4 +10,9 @@
       <ion-title size="large">qrgenerator</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-button (click)="generateQRCode()">Generate QR Code</ion-button>
+
+  <img [src]="qrCodeDataUrl" *ngIf="qrCodeDataUrl" alt="QR Code">
+
+
 </ion-content>

@@ -2,11 +2,19 @@
 
   <ion-card>
     <ion-card-content class="ion-text-center">
-      <ion-icon name="notifications" style="color: #574d07; font-size: 1em;"></ion-icon>
-      "IS100"
+      IS100
     </ion-card-content>
   </ion-card>
-
-
-
+  <div class="centered-content">
+    <ion-input [(ngModel)]="qrCodeText" placeholder="QR Code Text"></ion-input>
+    <ion-input [(ngModel)]="qrCodeSize" type="number" placeholder="QR Code Size"></ion-input>
+  </div>
+ 
+  
+  
+  <div class="centered-content"> <!-- Apply the CSS class to center content -->
+    <img [src]="qrCodeDataUrl" *ngIf="qrCodeDataUrl" alt="QR Code">
+    
+    <ion-button (click)="generateQRCode()" class="colser">Generate  <ion-icon name="qr-code-outline" class="hude"></ion-icon> QR Code</ion-button>
+  </div>
 </ion-content>

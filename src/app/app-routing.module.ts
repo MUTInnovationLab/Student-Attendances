@@ -41,7 +41,11 @@ const routes: Routes = [
   {
     path: 'qrgenerator',
     loadChildren: () => import('./qrgenerator/qrgenerator.module').then( m => m.QrgeneratorPageModule)
+  },  {
+    path: 'stude-scan',
+    loadChildren: () => import('./stude-scan/stude-scan.module').then( m => m.StudeScanPageModule)
   },
+
 
 ];
 
