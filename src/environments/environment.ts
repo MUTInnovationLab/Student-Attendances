@@ -11,8 +11,8 @@ export const environment = {
     projectId: "student-attendance-7453a",
     storageBucket: "student-attendance-7453a.appspot.com",
     messagingSenderId: "172755450483",
-    appId: "1:172755450483:web:07bb10d11abb56b214c806"
-  },
+    appId: "1:172755450483:web:2224bb16b714f3c514c806"
+  }
 };
 /*
  * For easier debugging in development mode, you can import the following file

@@ -11,28 +11,28 @@
 	<form class="form">
     <div class="input-group">
 			<label for="email">Email</label>
-			<input type="text" name="email" id="email" >
+			<input type="text" name="email" id="email" [(ngModel)]="email" >
 		</div>
     <div class="input-group">
 			<label for="name">Name</label>
-			<input type="text" name="name" id="name">
+			<input type="text" name="name" id="name" [(ngModel)]="name">
 		</div>
     <div class="input-group">
 			<label for="surname">Surname</label>
-			<input type="text" name="surname" id="surname" >
+			<input type="text" name="surname" id="surname" [(ngModel)]="surname">
 		</div>
 		<div class="input-group">
 			<label for="studentnumber">Student Number</label>
-			<input type="text" name="studentnumber" id="studentnumber">
+			<input type="text" name="studentnumber" id="studentnumber" [(ngModel)]="studentNumber">
 		</div>
 		<div class="input-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" >
+			<input type="password" name="password" id="password" [(ngModel)]="password">
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
 			</div>
 		</div>
-		<button class="sign">Sign Up</button>
+		<button class="sign" (click)="register()">Sign Up</button>
 	</form>
 	<div class="social-message">
 		<div class="line"></div>
@@ -41,7 +41,7 @@
 	</div>
 
 	<p class="signup">Go to login with your account?
-		<a rel="noopener noreferrer" href="#" class="">Log-in</a>
+		<a rel="noopener noreferrer" href="#" (click)= goToPage() class="">Log-in</a>
 	</p>
 </div>
 <!-- </ion-card> -->
