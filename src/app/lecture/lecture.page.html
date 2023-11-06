@@ -5,7 +5,7 @@
 
 
 
-    <ion-card class="profile-card" (click)= goToProfile()>
+    <ion-card class="profile-card">
       <ion-card-content>
         <ion-icon name="person-circle-outline" class="icon"></ion-icon>
         <ion-card-title class="card-title">My PROFILE</ion-card-title>
@@ -14,7 +14,7 @@
 
 
 
-    <ion-card class="student-card" (click)= goToStudents()>
+    <ion-card class="student-card">
       <ion-card-content>
         <ion-icon name="receipt-outline" class="icon"></ion-icon>
         <ion-card-title class="card-title">Students</ion-card-title>
@@ -58,11 +58,10 @@
         <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
     
         <form action="" method="post" class="contactform">
-          <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">MODULE</label></p>
-          <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">CODE</label></p>
-          <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">LEVEL</label></p>
-          <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
-          <p class="submit_wrapper"><input type="submit" value="SUBMIT"></p>			
+          <p class="input_wrapper"><input type="text" name="contact_nom" [(ngModel)]="moduleName"  id ="contact_nom"><label for="contact_nom">MODULE</label></p>
+          <p class="input_wrapper"><input type="text" name="contact_email" [(ngModel)]="moduleCode"  id ="contact_email"><label for="contact_email">CODE</label></p>
+          <p class="input_wrapper"><input type="text" name="contact_sujet" [(ngModel)]="moduleLevel"  id ="contact_sujet"><label for="contact_sujet">LEVEL</label></p>
+          <p class="submit_wrapper"><input type="submit" (click)="addModule()" value="SUBMIT"></p>			
         </form>
     </article>
   </section>
