@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lecture',
@@ -14,9 +14,17 @@ export class LecturePage implements OnInit {
   contact_email: string = '';
   contact_sujet: string = '';
   contact_message: string = '';
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
+
+  goToStudents() {
+    this.router.navigate(['/attendies']);
   }
 
 }
