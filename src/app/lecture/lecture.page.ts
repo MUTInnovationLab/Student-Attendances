@@ -23,6 +23,8 @@ export class LecturePage implements OnInit {
   moduleName: any;
   moduleCode: any;
   moduleLevel:any;
+  userData: any;
+  tableData: any[] = [];
 
 
 
@@ -34,6 +36,7 @@ export class LecturePage implements OnInit {
     private toastController: ToastController) { }
 
   ngOnInit() {
+    this.getData();
   }
   async addModule() {
     const loader = await this.loadingController.create({
@@ -63,5 +66,24 @@ export class LecturePage implements OnInit {
     }
   }
   
+
+    getData() {
+    this.db
+      .collection('lecturer', (ref) =>
+        ref.where('moduleName', '>', '')
+      )
+      .snapshotChanges()
+      .subscribe((data) => {
+        this.userData = data.map((d) => {
+          const id = d.payload.doc.id;
+          const docData = d.payload.doc.data() as any; // Cast docData as any type
+          return { id, ...docData };
+        });
+        console.log(this.userData);
+        this.tableData = this.userData;
+      });
+  }
+
+
 
 }

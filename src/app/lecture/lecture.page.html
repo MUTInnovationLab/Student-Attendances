@@ -77,44 +77,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IP200</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
-          <td>View</td>
-        </tr>
-        <tr >
-          <td>IS100</td>
+        <tr *ngFor="let data of tableData">
+          <td>{{ data.moduleCode }}</td>
           <td>View</td>
         </tr>
         
