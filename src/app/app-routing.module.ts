@@ -45,6 +45,14 @@ const routes: Routes = [
     path: 'stude-scan',
     loadChildren: () => import('./stude-scan/stude-scan.module').then( m => m.StudeScanPageModule)
   },
+  {
+    path: 'attendies',
+    loadChildren: () => import('./attendies/attendies.module').then( m => m.AttendiesPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
 
 
 ];
