@@ -36,7 +36,7 @@ export class AdminPage implements OnInit {
         department: this.department,
       };
 
-      await this.afs.collection('registered staff').add(data);
+      await this.afs.collection('lecturer').add(data);
 
       // Clear the input fields
       this.fullName = '';
