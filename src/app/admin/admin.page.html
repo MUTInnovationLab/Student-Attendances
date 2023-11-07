@@ -1,43 +1,35 @@
 
-
 <ion-content [fullscreen]="true">
-  <div id="container">
-    <h1>&bull; Add and Update Lecturers &bull;</h1>
-    <div class="underline">
+  <form (ngSubmit)="submitForm()" class="form">
+    <p class="title">Add Lecturer</p>
+    <p class="message">Add Lecturer to Student Attendance app</p>
+    <div class="flex">
+      <label>
+        <input required="" placeholder="" type="text" class="input" [(ngModel)]="fullName" name="fullName">
+        <span>Full Name</span>
+      </label>
+
+      <label>
+        <input required="" placeholder="" type="text" class="input" [(ngModel)]="staffNumber" name="staffNumber">
+        <span>Staff Number</span>
+      </label>
     </div>
-    <div class="icon_wrapper">
-      <ion-icon name="school-sharp" class="icon"></ion-icon>
-    </div>
-    <form action="#" method="post" id="contact_form">
-      <div class="name">
-        <label for="name"></label>
-        <input type="text" placeholder=" Name" name="name" id="name_input" required>
-      </div>
-      <div class="email">
-        <label for="email"></label>
-        <input type="email" placeholder="e-mail" name="email" id="email_input" required>
-      </div>
-      <div class="telephone">
-        <label for="name"></label>
-        <input type="text" placeholder="Staff Number" name="telephone" id="telephone_input" required>
-      </div>
-      <div class="telephone">
-        <label for="name"></label>
-        <input type="text" placeholder="Position" name="telephone" id="telephone_input" required>
-      </div>
-      <div class="subject">
-        <label for="subject"></label>
-        <select placeholder="Subject line" name="subject" id="subject_input" required>
-          <option disabled hidden selected>Fuculty</option>
-          <option>Natural Science</option>
-          <option>Management Science</option>
-          <option>Engeneering</option>
-        </select>
-      </div>
-      
-      <div class="submit">
-        <input type="submit" value="SUbmit" id="form_button" />
-      </div>
-    </form><!-- // End form -->
-  </div><!-- // End #container -->
+
+    <label>
+      <input required="" placeholder="" type="email" class="input" [(ngModel)]="email" name="email">
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="position" name="position">
+      <span>Position</span>
+    </label>
+    <label>
+      <input required="" placeholder="" type="text" class="input" [(ngModel)]="department" name="department">
+      <span>Department</span>
+    </label>
+    <button type="submit" class="submit">Submit</button>
+  </form>
 </ion-content>
+
+
