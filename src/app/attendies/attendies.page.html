@@ -1,9 +1,18 @@
 
 
 <ion-content [fullscreen]="true">
- 
+  
   <h2>My Student & Attendances</h2>
   <div class="table-wrapper">
+    <ion-item class="date-filter">
+       
+        <!-- Use the ion-button to open the date picker when clicked -->
+        <ion-button size="small" (click)="openDatePicker()" slot="end">
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          {{ selectedDate || 'Select a date' }}
+        </ion-button>
+      </ion-item>
+      
       <table class="fl-table">
           <thead>
           <tr>
