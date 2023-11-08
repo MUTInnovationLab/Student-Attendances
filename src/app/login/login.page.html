@@ -11,16 +11,16 @@
 	<form class="form">
 		<div class="input-group">
 			<label for="username">Username</label>
-			<input type="text" name="username" id="username">
+			<input type="text" name="username" id="username" [(ngModel)]="email">
 		</div>
 		<div class="input-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password">
+			<input type="password" name="password" id="password" [(ngModel)]="password">
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
 			</div>
 		</div>
-		<button class="sign">Sign in</button>
+		<button class="sign" (click)="login()">Sign in</button>
 	</form>
 	<div class="social-message">
 		<div class="line"></div>
@@ -29,7 +29,7 @@
 	</div>
 	
 	<p class="signup">Don't have an account?
-		<a rel="noopener noreferrer" href="#" class="">Sign up</a>
+		<a rel="noopener noreferrer" routerLink="/register" href="#" class="">Sign up</a>
 	</p>
 </div>
 <!-- </ion-card> -->
