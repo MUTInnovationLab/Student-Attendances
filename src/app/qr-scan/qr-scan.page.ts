@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+import { ActivatedRoute } from '@angular/router';
 import * as QRCode from 'qrcode';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 
 @Component({
   selector: 'app-qr-scan',
@@ -9,41 +10,33 @@ import * as QRCode from 'qrcode';
 })
 export class QrScanPage implements OnInit {
   qrCodeDataUrl: string = '';
-  qrCodeText: string = 'This is a secret qr code message';
+  qrCodeText: string = '';
   qrCodeSize: number = 200;
   scannedResult: any;
   content_visibility = '';
+  moduleCode: string = '';
 
-  constructor() {this.startQRCodeGenerationInterval(); }
-  ngOnInit() {}
+  constructor(private route: ActivatedRoute) {}
 
-  async generateQRCode() {
-    try {
-      this.qrCodeText= this.qrCodeText;
-      this.qrCodeText= this.qrCodeText +"-" +Date.now();
-      this.qrCodeDataUrl = await QRCode.toDataURL(this.qrCodeText, {
-        width: this.qrCodeSize,
-        margin: 1,
-      });
-    } catch (error) {
-      console.error('Error generating QR code:', error);
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      if (params['moduleCode']) {
+        this.moduleCode = params['moduleCode'];
+        this.generateQRCode();
+      }
+    });
+  }
+
+
+    async generateQRCode() {
+      try {
+        this.qrCodeText = this.moduleCode;
+        this.qrCodeDataUrl = await QRCode.toDataURL(this.qrCodeText, {
+          width: this.qrCodeSize,
+          margin: 1,
+        });
+      } catch (error) {
+        console.error('Error generating QR code:', error);
+      }
     }
-  }
-
-  startQRCodeGenerationInterval() {
-    this.generateQRCode();
-
-    setInterval(() => {
-      this.generateQRCode();
-    }, 7000);
-  }
-
-  async scanBarcode() {
-    const result = await BarcodeScanner.startScan();
-    if (result.hasContent) {
-      console.log('Scanned data:', result.content);
-    } else {
-      console.error('No barcode data found.');
-    }
-  }
 }

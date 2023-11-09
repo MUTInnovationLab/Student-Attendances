@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { LoadingController } from '@ionic/angular';
 import { AlertController, NavParams } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class LecturePage implements OnInit {
 
 
 
-  constructor(private navCtrl: NavController,
+  constructor(private router: Router,
+    private navCtrl: NavController,
     private loadingController: LoadingController,
     private auth: AngularFireAuth,
     private db: AngularFirestore,
@@ -67,7 +69,11 @@ export class LecturePage implements OnInit {
   }
   
 
-    getData() {
+  gotoQRscan(moduleCode: string) {
+    this.router.navigate(['qr-scan'], { queryParams: { moduleCode } });
+  }
+
+  getData() {
     this.db
       .collection('lecturer', (ref) =>
         ref.where('moduleName', '>', '')
@@ -83,7 +89,6 @@ export class LecturePage implements OnInit {
         this.tableData = this.userData;
       });
   }
-
 
 
 }
