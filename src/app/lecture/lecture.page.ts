@@ -72,6 +72,12 @@ export class LecturePage implements OnInit {
   gotoQRscan(moduleCode: string) {
     this.router.navigate(['qr-scan'], { queryParams: { moduleCode } });
   }
+  gotoProfile(moduleCode: string) {
+    this.router.navigate(['profile']);
+  }
+  gotoAttendies(moduleCode: string) {
+    this.router.navigate(['attendies']);
+  }
 
   getData() {
     this.db
